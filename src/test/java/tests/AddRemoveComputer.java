@@ -5,8 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.open;
-import static methods.ExternalPage.createComputer;
-import static methods.ExternalPage.removeComputer;
+import static methods.ExternalPage.*;
 import static utils.Variables.testPageUrl;
 
 public class AddRemoveComputer {
@@ -15,15 +14,21 @@ public class AddRemoveComputer {
         open(testPageUrl);
     }
 
-    @Story("Create a new computer")
+    @Story("Create budget item")
     @Test
-    public void test01_createNewComputer() {
-        createComputer();
+    public void test1_creteItem(){
+        createItem();
     }
 
-    @Story("Remove computer")
+    @Story("Edit budget item")
     @Test
-    public void test02_removeNewComputer() {
-        removeComputer();
+    public void test2_editItem(){
+        editItem();
+    }
+
+    @Story("Delete budget item")
+    @Test
+    public void test3_deleteItem(){
+        deleteItem();
     }
 }

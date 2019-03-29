@@ -2,25 +2,28 @@ package methods;
 
 import static methods.BaseMethods.*;
 import static pages.MainPage.*;
-import static utils.Variables.*;
 
 public class ExternalPage {
 
-    public static void createComputer(){
-        clickOnItem(buttonAddComputer);
-        sendKeysToElement(fieldComputerName, macBook);
-        sendKeysToElement(fieldIntroducedDate, "2019-04-08");
-        sendKeysToElement(fieldDiscountedDate, "2019-04-08");
-        selectFromSelector(dropdownChooseCompany, "Apple Inc.");
-        clickOnItem(buttonSaveComputer);
-        textShouldBeVisible("Done! Computer "+macBook+" has been created");
+    public static void createItem(){
+        selectFromSelector(categorySelector, "Travel");
+        sendKeysToElement(descriptionField, "Tickets");
+        sendKeysToElement(valueField, "$400");
+        clickOnItem(buttonAdd);
+        textShouldBeVisible("$1,813.93");
     }
 
-    public static void removeComputer(){
-        sendKeysToElement(fieldSearch, macBook);
-        clickOnItem(buttonFilterByName);
-        selectFromTable(macBook);
-        clickOnItem(buttonDeleteComputer);
-        textShouldBeVisible("Done! Computer has been deleted");
+    public static void editItem() {
+        selectItemFromTable("Paycheck");
+        sendKeysToElementEdit(descriptionField, "Paycheck 2");
+        sendKeysToElementEdit(valueField, "$6,700");
+        clickOnItem(buttonUpdate);
+        textShouldBeVisible("$3,213.93");
+    }
+
+    public static void deleteItem() {
+        selectItemFromTable("Gas");
+        clickOnItem(buttonDelete);
+        textShouldBeVisible("$2,978.66");
     }
 }
