@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static methods.ExternalPage.*;
 import static utils.Variables.testPageUrl;
 
-public class AddRemoveComputer {
+public class BudgetingApp {
     @Before
     public void before() {
         open(testPageUrl);
@@ -16,19 +16,19 @@ public class AddRemoveComputer {
 
     @Story("Create budget item")
     @Test
-    public void test1_creteItem(){
+    public void test1(){
         createItem();
     }
 
     @Story("Edit budget item")
     @Test
-    public void test2_editItem(){
+    public void test2(){
         editItem();
     }
 
     @Story("Delete budget item")
     @Test
-    public void test3_deleteItem(){
+    public void test3(){
         deleteItem();
     }
 }
