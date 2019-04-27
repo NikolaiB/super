@@ -1,10 +1,6 @@
 package methods;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.WebDriver;
-import sun.invoke.empty.Empty;
-
-import java.util.Set;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
